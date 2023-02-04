@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Archives</title>
+  <style>
+    body {
+      background-color: black;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav a {
+      display: block;
+      padding: 10px 20px;
+      color: lightgreen;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    footer {
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Research Archives</h1><img src='C:\Users\Dell User\Desktop\RA_SiteControl\ralogo.png' height=100 width=139>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#membership">Membership</a></li>
+      </ul>
+    </nav>
+  </header>
+  <img src='C:\Users\Dell User\Desktop\RA_SiteControl\Banner.gif' height=581 width=800>
+  <main>
+    <section id="about">
+      <h2>About Research Archives</h2>
+      <p>Research Archives (R.A.) was started to store the important scientifical, mathematical, and political information known to its members. R.A. is a non-profit organization which aims to preserve our knowledge for the next generation and preserving ideas safely.</p>
+    </section>
+    <section id="collections">
+      <h2>Collections</h2>
+      <div id="collection-list"></div>
+        <script>
+	const collectionList = document.querySelector("#collection-list");
+	const joinButton = document.querySelector("#join-button");
+
+	const collections = [
+	  { name: "Scientific Discoveries", description: "Important breakthroughs in various scientific fields." },
+	  { name: "Mathematical Theorems", description: "Groundbreaking theories and formulas in mathematics." },
+	  { name: "Political Documents", description: "Significant historical documents related to politics and government." },
+	];
+
+	function renderCollections() {
+	  collectionList.innerHTML = "";
+	  collections.forEach((collection) => {
+	    collectionList.innerHTML += `
+	      <div>
+	        <h3>${collection.name}</h3>
+
+	<p>${collection.description}</p>
+	      </div>
+	    `;
+	  });
+	}
+	renderCollections();
+
+	joinButton.addEventListener("click", () => {
+	alert("You have joined Research Archives. Welcome to our community!");
+	});
+        </script>
+    </section>
+    <section id="membership">
+      <h2>Membership</h2>
+      <p>Become a member of Research Archives to access our valuable collections and contribute to preserving knowledge for future generations.</p>
+      <button id="join-button">Join Now</button>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright © 2023 Research Archives</p>
+  </footer>
+</body>
+</html>
